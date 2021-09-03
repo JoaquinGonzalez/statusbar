@@ -1,6 +1,6 @@
 # Status Bar
 
-## Simple Status Bar for DWM (Dynamic Window Manager)
+Simple Status Bar for DWM (Dynamic Window Manager)
 
 ## Install
 
