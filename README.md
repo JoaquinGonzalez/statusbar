@@ -10,4 +10,4 @@ $ sudo make install
 
 ## Screenshot
 
-!(screenshot.png)
+![](screenshot.png)
