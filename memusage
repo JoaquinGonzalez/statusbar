@@ -1,0 +1,9 @@
+#!/bin/sh
+
+memstat=$(cat /proc/meminfo | head -3)
+memtotal=$(echo $memstat | awk '{print $2}')
+memtotal=$(($memtotal/1000))
+memavailable=$(echo $memstat | awk '{print $8}')
+memavailable=$(($memtotal-($memavailable/1000)))
+mem=$((($memavailable*100)/$memtotal))
+echo $mem

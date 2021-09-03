@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while true; do
+    usdtoars -a
+    weather -a
+    usdtoars="$(usdtoars --get-official)/$(usdtoars --get-blue)"
+    date=$(date "+%d/%m/%y %H:%M")
+    weather=$(weather -c)
+    vol=$(pamixer --get-volume-human)
+    xsetroot -name "💸 $usdtoars ⛅ $weather 🔊 $vol 💾 $(memusage)% 💻 $(cpuusage)% ⏳ $date"
+    sleep 1
+done
