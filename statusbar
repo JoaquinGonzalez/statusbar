@@ -7,6 +7,6 @@ while true; do
     date=$(date "+%d/%m/%y %H:%M")
     weather=$(weather -c)
     vol=$(pamixer --get-volume-human)
-    xsetroot -name "💸 $usdtoars ⛅ $weather 🔊 $vol 💾 $(memusage)% 💻 $(cpuusage)% ⏳ $date"
+    xsetroot -name "💸 $usdtoars ⛅ $weather ⌨️ $(klayout -p) 🔊 $vol 💾 $(memusage)% 🌡️ $(cputemp) 💻 $(cpuusage)% ⏳ $date"
     sleep 1
 done

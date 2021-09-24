@@ -1,0 +1,25 @@
+#!/bin/sh
+
+layouts=(us latam)
+current_layout=$(setxkbmap -query | grep layout | awk '{print $2}')
+
+case $1 in
+    "-p")
+        echo $current_layout
+        ;;
+    "-t")
+        for i in {0..2}; do
+            layout=${layouts[$i]}
+            if [ "$layout" = "$current_layout" ]
+            then
+                if [ "$i" -eq 1 ]
+                then
+                    setxkbmap ${layouts[0]}
+                else
+                    ni=$(($i + 1))
+                    setxkbmap ${layouts[$ni]}
+                fi
+            fi
+        done
+        ;;
+esac
